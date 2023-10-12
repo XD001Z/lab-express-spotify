@@ -1,4 +1,10 @@
 {{#each albumTracks}}
-    <h1>{{this.name}}</h1>
-    <audio src={{preview_url}} controls></audio>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: start; margin: 2.5em 0em">
+        <h1>{{this.name}}</h1>
+        {{#if preview_url}}
+            <audio src={{preview_url}} controls></audio>
+        {{else}}
+            <p style="color: red; font-size: 2em">No preview available</p>
+        {{/if}}
+    </div>
 {{/each}}

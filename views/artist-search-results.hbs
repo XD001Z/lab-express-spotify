@@ -1,7 +1,11 @@
 {{#each artistsFromApi}}
-    <div>
-        <h1>{{this.name}}</h1>
-        <img src={{this.images.0.url}}>
-        <a href="/albums/{{id}}">View Albums</a>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 2.5em 0em">
+        <h1 style="color: black; font-size: 2em">{{this.name}}</h1>
+        {{#if this.images.1.url}}
+            <img src={{this.images.1.url}}>
+        {{else}}
+            <img src="/images/no-image.png" alt="no image">
+        {{/if}}
+        <a href="/albums/{{id}}" style="text-decoration: none; color: white; border-radius: 2em; border: 0.1em solid black; background-color: red">View Albums</a>
     </div>
 {{/each}}

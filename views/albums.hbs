@@ -1,5 +1,11 @@
 {{#each artistAlbums}}
-    <h1>{{this.name}}</h1>
-    <img src={{this.images.0.url}}>
-    <a href="/tracks/{{id}}">View Tracks</a>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 2.5em 0em;">
+        <h1 style="color: black; font-size: 2em">{{this.name}}</h1>
+        {{#if this.images.0.url}}
+            <img src={{this.images.0.url}} style="width: 320px; aspect-ratio: 1/1">
+        {{else}}
+            <img src="/images/no-image.png" alt="no image" style="width: 320px; aspect-ratio: 1/1">
+        {{/if}}
+        <a href="/tracks/{{id}}" style="text-decoration: none; color: white; border-radius: 2em; border: 0.1em solid black; background-color: red">View Tracks</a>
+    </div>
 {{/each}}
